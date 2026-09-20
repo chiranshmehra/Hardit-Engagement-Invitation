@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Play, Pause } from 'lucide-react';
 
-export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSrc = "/audio/tere-vaastey.m4a" }) {
+export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSrc = "audio/tere-vaastey.m4a" }) {
   const audioRef = useRef(null);
   const hasSetInitialTime = useRef(false);
   const [currentSrc, setCurrentSrc] = React.useState(audioSrc);

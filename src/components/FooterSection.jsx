@@ -8,7 +8,7 @@ export default function FooterSection() {
       {/* Background Overlay Image - Couple Illustration */}
       <div className="absolute inset-0 opacity-40 pointer-events-none mix-blend-multiply">
         <img
-          src="/images/couple_end.jpg"
+          src="images/couple_end.jpg"
           alt="Couple illustration"
           className="w-full h-full object-cover object-center"
         />

@@ -15,7 +15,7 @@ export default function EnvelopeOverlay({ onOpen, isVisible }) {
         {/* Envelope Graphic with Integrated H & J Wax Seal */}
         <div className="relative w-full flex items-center justify-center">
           <img
-            src="/images/envelope_hj.png"
+            src="images/envelope_hj.png"
             alt="Open your invitation"
             className="w-full h-auto object-cover scale-[1.05]"
             draggable="false"

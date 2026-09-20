@@ -33,7 +33,7 @@ export default function VideoIntro({ isVisible, onVideoComplete }) {
       <div className="relative w-full max-w-[500px] flex items-center justify-center">
         <video
           ref={videoRef}
-          src="/video_intro_final.mp4"
+          src="video_intro_final.mp4"
           muted
           playsInline
           preload="auto"

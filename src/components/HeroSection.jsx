@@ -65,14 +65,14 @@ export default function HeroSection() {
         
         {/* Left Floral Bouquet - Placed over the video border (z-30) */}
         <img
-          src="/images/flowers_left.png"
+          src="images/flowers_left.png"
           alt="Left floral bouquet"
           className="absolute -top-[115px] sm:-top-[135px] left-0 sm:left-4 w-48 sm:w-64 h-auto z-30 pointer-events-none drop-shadow-sm animate-flower-left"
         />
 
         {/* Right Floral Bouquet - Placed over the video border (z-30) */}
         <img
-          src="/images/flowers_right.png"
+          src="images/flowers_right.png"
           alt="Right floral bouquet"
           className="absolute -top-[115px] sm:-top-[135px] right-0 sm:right-4 w-48 sm:w-64 h-auto z-30 pointer-events-none drop-shadow-sm animate-flower-right"
         />
