@@ -36,7 +36,6 @@ export default function App() {
       <AudioPlayer
         isPlaying={isPlayingAudio}
         togglePlay={toggleAudio}
-        onPause={() => setIsPlayingAudio(false)}
         showButton={step === 'main'}
       />
 
