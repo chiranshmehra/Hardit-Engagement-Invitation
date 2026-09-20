@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Play, Pause } from 'lucide-react';
 
-export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSrc = "audio/tere-vaastey.m4a" }) {
+export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSrc = "audio/ikko-mikke.m4a" }) {
   const audioRef = useRef(null);
   const [currentSrc, setCurrentSrc] = React.useState(audioSrc);
 
@@ -11,6 +11,9 @@ export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSr
     const audio = audioRef.current;
     if (audio) {
       if (isPlaying) {
+        if (audio.currentTime < 8) {
+          audio.currentTime = 8;
+        }
         audio.play().catch((err) => console.log("Audio play deferred:", err));
       } else {
         audio.pause();
@@ -21,7 +24,7 @@ export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSr
   const handleEnded = () => {
     const audio = audioRef.current;
     if (audio) {
-      audio.currentTime = 0;
+      audio.currentTime = 8;
       audio.play().catch(() => {});
     }
   };
