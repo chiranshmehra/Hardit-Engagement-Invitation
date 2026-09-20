@@ -21,7 +21,7 @@ export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSr
   const handleEnded = () => {
     const audio = audioRef.current;
     if (audio) {
-      audio.currentTime = 8;
+      audio.currentTime = 0;
       audio.play().catch(() => {});
     }
   };
@@ -33,20 +33,12 @@ export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSr
     }
   };
 
-  const handleLoadedMetadata = () => {
-    const audio = audioRef.current;
-    if (audio && audio.currentTime < 8) {
-      audio.currentTime = 8;
-    }
-  };
-
   return (
     <>
       <audio
         ref={audioRef}
         src={currentSrc}
         preload="auto"
-        onLoadedMetadata={handleLoadedMetadata}
         onEnded={handleEnded}
         onError={handleError}
       />
