@@ -11,9 +11,6 @@ export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSr
     const audio = audioRef.current;
     if (audio) {
       if (isPlaying) {
-        if (audio.currentTime < 8) {
-          audio.currentTime = 8;
-        }
         audio.play().catch((err) => console.log("Audio play deferred:", err));
       } else {
         audio.pause();
@@ -24,7 +21,7 @@ export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSr
   const handleEnded = () => {
     const audio = audioRef.current;
     if (audio) {
-      audio.currentTime = 8;
+      audio.currentTime = 0;
       audio.play().catch(() => {});
     }
   };
