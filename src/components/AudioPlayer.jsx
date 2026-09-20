@@ -1,11 +1,42 @@
 import React, { useRef, useEffect } from 'react';
 import { Play, Pause } from 'lucide-react';
 
-export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSrc = "audio/tere-vaastey.m4a" }) {
+export default function AudioPlayer({ isPlaying, togglePlay, onPause, showButton, audioSrc = "audio/ikko-mikke.m4a" }) {
   const audioRef = useRef(null);
   const [currentSrc, setCurrentSrc] = React.useState(audioSrc);
 
   const fallbackSrc = "https://pub-4dc8201144ca418fb604349c73e8c724.r2.dev/Einaudi_%20Divenire%20(1)%20(1).mp3";
+
+  // Stop audio whenever Chrome is minimized, tab is hidden, or user navigates back / closes tab
+  useEffect(() => {
+    const handleStop = () => {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.pause();
+      }
+      if (onPause) {
+        onPause();
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        handleStop();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('pagehide', handleStop);
+    window.addEventListener('popstate', handleStop);
+    window.addEventListener('beforeunload', handleStop);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('pagehide', handleStop);
+      window.removeEventListener('popstate', handleStop);
+      window.removeEventListener('beforeunload', handleStop);
+    };
+  }, [onPause]);
 
   useEffect(() => {
     const audio = audioRef.current;
