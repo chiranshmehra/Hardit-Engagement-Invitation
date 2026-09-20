@@ -15,6 +15,7 @@ export default function HeroSection() {
           muted
           loop
           playsInline
+          preload="metadata"
           src="https://res.cloudinary.com/ukb8xb7m/video/upload/v1787037092/Swans2_1_qwzsod.mov"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
@@ -65,16 +66,18 @@ export default function HeroSection() {
         
         {/* Left Floral Bouquet - Placed over the video border (z-30) */}
         <img
-          src="images/flowers_left.png"
+          src="images/flowers_left.webp"
           alt="Left floral bouquet"
           className="absolute -top-[115px] sm:-top-[135px] left-0 sm:left-4 w-48 sm:w-64 h-auto z-30 pointer-events-none drop-shadow-sm animate-flower-left"
+          loading="lazy"
         />
 
         {/* Right Floral Bouquet - Placed over the video border (z-30) */}
         <img
-          src="images/flowers_right.png"
+          src="images/flowers_right.webp"
           alt="Right floral bouquet"
           className="absolute -top-[115px] sm:-top-[135px] right-0 sm:right-4 w-48 sm:w-64 h-auto z-30 pointer-events-none drop-shadow-sm animate-flower-right"
+          loading="lazy"
         />
 
         <div className="relative w-full min-h-[720px] sm:min-h-[780px]">

@@ -3,6 +3,13 @@ import React, { useRef, useEffect } from 'react';
 export default function VideoIntro({ isVisible, onVideoComplete }) {
   const videoRef = useRef(null);
 
+  // Warm up and buffer video immediately when page loads
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+    }
+  }, []);
+
   useEffect(() => {
     if (isVisible && videoRef.current) {
       videoRef.current.currentTime = 0;

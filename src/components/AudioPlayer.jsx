@@ -3,7 +3,6 @@ import { Play, Pause } from 'lucide-react';
 
 export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSrc = "audio/tere-vaastey.m4a" }) {
   const audioRef = useRef(null);
-  const hasSetInitialTime = useRef(false);
   const [currentSrc, setCurrentSrc] = React.useState(audioSrc);
 
   const fallbackSrc = "https://pub-4dc8201144ca418fb604349c73e8c724.r2.dev/Einaudi_%20Divenire%20(1)%20(1).mp3";
@@ -12,14 +11,6 @@ export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSr
     const audio = audioRef.current;
     if (audio) {
       if (isPlaying) {
-        if (!hasSetInitialTime.current) {
-          try {
-            audio.currentTime = 29; // Skip first 29 seconds
-          } catch (e) {
-            // Seek prior to metadata load handled gracefully
-          }
-          hasSetInitialTime.current = true;
-        }
         audio.play().catch((err) => console.log("Audio play deferred:", err));
       } else {
         audio.pause();
@@ -30,7 +21,7 @@ export default function AudioPlayer({ isPlaying, togglePlay, showButton, audioSr
   const handleEnded = () => {
     const audio = audioRef.current;
     if (audio) {
-      audio.currentTime = 29; // Loop back to 29 seconds
+      audio.currentTime = 0;
       audio.play().catch(() => {});
     }
   };
