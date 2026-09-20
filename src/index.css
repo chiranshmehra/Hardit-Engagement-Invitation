@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Gold Gradient Shimmer Text */
+.gold-shimmer-text {
+  background: linear-gradient(
+    105deg,
+    #B48C3D 0%,
+    #B48C3D 25%,
+    #cda95a 46%,
+    #d8ba72 52%,
+    #cda95a 58%,
+    #B48C3D 75%,
+    #B48C3D 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes candleShimmer {
+  0% { background-position: 100% 0; }
+  50% { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
+}
+
+.animate-shimmer {
+  animation: candleShimmer 4.5s ease-in-out infinite;
+}
+
+/* Number flip transitions */
+.number-flip-out {
+  transform: translateY(-60%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.number-flip-in {
+  transform: translateY(60%);
+  opacity: 0;
+  transition: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F9F0E0;
+}
+::-webkit-scrollbar-thumb {
+  background: #B48C3D;
+  border-radius: 4px;
+}
+
+/* Floral Gentle Breathing (Zoom In / Zoom Out) Animation */
+@keyframes flowerBreatheLeft {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(1.5deg);
+  }
+}
+
+@keyframes flowerBreatheRight {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(-1.5deg);
+  }
+}
+
+.animate-flower-left {
+  animation: flowerBreatheLeft 4.5s ease-in-out infinite;
+  transform-origin: top left;
+}
+
+.animate-flower-right {
+  animation: flowerBreatheRight 4.5s ease-in-out infinite;
+  transform-origin: top right;
+}
+
