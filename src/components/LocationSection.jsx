@@ -29,7 +29,7 @@ export default function LocationSection() {
       <ScrollReveal animation="zoom-in" delay={200} className="relative max-w-md w-full rounded-2xl overflow-hidden shadow-md border border-[#a67d2b]/20 mb-8 bg-[#FFF9EB] p-2">
         <div className="w-full h-[220px] rounded-xl overflow-hidden relative">
           <img
-            src="https://static.tildacdn.net/tild3637-3939-4864-a263-333836383139/ChatGPT_Image_May_25.png"
+            src="images/venue.webp"
             alt="Venue"
             className="w-full h-full object-cover"
           />
