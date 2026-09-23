@@ -167,6 +167,18 @@ export default function HeroSection() {
                   </div>
 
                 </div>
+
+                {/* Sister (Centered below columns) */}
+                <div className="w-full mt-5 sm:mt-6 flex flex-col items-center space-y-3">
+                  <div className="flex flex-col items-center">
+                    <span className="font-serifCustom text-[14px] sm:text-[18px] text-[#5A0F1B] font-semibold leading-tight">
+                      Ramanjeet Kaur Nagi
+                    </span>
+                    <span className="font-ovo text-[11px] sm:text-[13px] text-[#a67d2b] font-medium tracking-wider uppercase mt-0.5">
+                      Sister
+                    </span>
+                  </div>
+                </div>
               </div>
 
             </ScrollReveal>
