@@ -128,7 +128,7 @@ export default function HeroSection() {
                   <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-3">
                     <div className="flex flex-col items-center sm:items-start">
                       <span className="font-serifCustom text-[14px] sm:text-[18px] text-[#5A0F1B] font-semibold leading-tight">
-                        Lt. S. Jagdish Singh
+                        Lt. S. Jagdish Singh Nagi
                       </span>
                       <span className="font-ovo text-[11px] sm:text-[13px] text-[#a67d2b] font-medium tracking-wider uppercase mt-0.5">
                         Grandfather
@@ -158,7 +158,7 @@ export default function HeroSection() {
 
                     <div className="flex flex-col items-center sm:items-end">
                       <span className="font-serifCustom text-[14px] sm:text-[18px] text-[#5A0F1B] font-semibold leading-tight">
-                        Jasdeep Kaur Nagi
+                        Sdn. Jasdeep Kaur Nagi
                       </span>
                       <span className="font-ovo text-[11px] sm:text-[13px] text-[#a67d2b] font-medium tracking-wider uppercase mt-0.5">
                         Mother
